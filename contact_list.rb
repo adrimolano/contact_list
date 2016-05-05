@@ -45,10 +45,11 @@ class ContactList
         when "search"
               term = ARGV[1]
               puts Contact.search(term)
-            Contact.search.each{|x| puts x.name + x.email}
-             #  else
-             #  puts "No contact with : #{term}"
-             # end
+            #Contact.search.each{|x| puts x.name + x.email}
+             else
+              unless ARGV.empty?
+              puts "No contact with : #{term}"
+             end
              # contact =[]
              # CSV.foreach(contact.cvs) do |row|
               

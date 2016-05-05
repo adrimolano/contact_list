@@ -56,10 +56,12 @@ class Contact
     def search(term)
       contacts_arr = []
       CSV.foreach("contact.csv") do |row|
-          contacts_arr.push(Contact.new(row[0], row[1], row[2])) if row[0].include?(term) || row[1].include?(term)
-         end 
-        
+          contacts_arr.push(row) if row[0].include?(term)|| 
+      row[1].include?(term) ||
+      row[2].include?(term)
     end
+    result
+  end
 
 
       # TODO: Select the Contact instances from the 'contacts.csv' file whose name or email attributes contain the search term
