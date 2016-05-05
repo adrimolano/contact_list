@@ -45,7 +45,7 @@ class ContactList
         when "search"
               term = ARGV[1]
               puts Contact.search(term)
-              #puts Contact.search.each{|x| puts x.name + x.email}
+            Contact.search.each{|x| puts x.name + x.email}
              #  else
              #  puts "No contact with : #{term}"
              # end
